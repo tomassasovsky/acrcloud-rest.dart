@@ -77,13 +77,30 @@ class Artist with _$Artist {
 @freezed
 class ExternalMetadataList with _$ExternalMetadataList {
   const factory ExternalMetadataList({
-    List<SongMetadataSource>? youtube,
-    List<SongMetadataSource>? deezer,
-    List<SongMetadataSource>? gaana,
-    List<SongMetadataSource>? awa,
-    List<SongMetadataSource>? kkbox,
-    List<SongMetadataSource>? spotify,
-    List<SongMetadataSource>? applemusic,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> spotify,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> applemusic,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> youtube,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> itunes,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> deezer,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> tidal,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> gaana,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> awa,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> kkbox,
+    @Default(<SongMetadataSource>[])
+    // ignore: invalid_annotation_target
+    @JsonKey(name: '7digital')
+        List<SongMetadataSource> sevendigital,
+    @Default(<SongMetadataSource>[])
+        List<SongMetadataSource> musicbrain,
   }) = _ExternalMetadataList;
 
   factory ExternalMetadataList.fromJson(Map<String, dynamic> json) =>

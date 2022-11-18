@@ -899,14 +899,19 @@ ExternalMetadataList _$ExternalMetadataListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ExternalMetadataList {
-  List<SongMetadataSource>? get youtube => throw _privateConstructorUsedError;
-  List<SongMetadataSource>? get deezer => throw _privateConstructorUsedError;
-  List<SongMetadataSource>? get gaana => throw _privateConstructorUsedError;
-  List<SongMetadataSource>? get awa => throw _privateConstructorUsedError;
-  List<SongMetadataSource>? get kkbox => throw _privateConstructorUsedError;
-  List<SongMetadataSource>? get spotify => throw _privateConstructorUsedError;
-  List<SongMetadataSource>? get applemusic =>
+  List<SongMetadataSource> get spotify => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get applemusic => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get youtube => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get itunes => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get deezer => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get tidal => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get gaana => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get awa => throw _privateConstructorUsedError;
+  List<SongMetadataSource> get kkbox => throw _privateConstructorUsedError;
+  @JsonKey(name: '7digital')
+  List<SongMetadataSource> get sevendigital =>
       throw _privateConstructorUsedError;
+  List<SongMetadataSource> get musicbrain => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -921,13 +926,17 @@ abstract class $ExternalMetadataListCopyWith<$Res> {
       _$ExternalMetadataListCopyWithImpl<$Res, ExternalMetadataList>;
   @useResult
   $Res call(
-      {List<SongMetadataSource>? youtube,
-      List<SongMetadataSource>? deezer,
-      List<SongMetadataSource>? gaana,
-      List<SongMetadataSource>? awa,
-      List<SongMetadataSource>? kkbox,
-      List<SongMetadataSource>? spotify,
-      List<SongMetadataSource>? applemusic});
+      {List<SongMetadataSource> spotify,
+      List<SongMetadataSource> applemusic,
+      List<SongMetadataSource> youtube,
+      List<SongMetadataSource> itunes,
+      List<SongMetadataSource> deezer,
+      List<SongMetadataSource> tidal,
+      List<SongMetadataSource> gaana,
+      List<SongMetadataSource> awa,
+      List<SongMetadataSource> kkbox,
+      @JsonKey(name: '7digital') List<SongMetadataSource> sevendigital,
+      List<SongMetadataSource> musicbrain});
 }
 
 /// @nodoc
@@ -944,43 +953,63 @@ class _$ExternalMetadataListCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? youtube = freezed,
-    Object? deezer = freezed,
-    Object? gaana = freezed,
-    Object? awa = freezed,
-    Object? kkbox = freezed,
-    Object? spotify = freezed,
-    Object? applemusic = freezed,
+    Object? spotify = null,
+    Object? applemusic = null,
+    Object? youtube = null,
+    Object? itunes = null,
+    Object? deezer = null,
+    Object? tidal = null,
+    Object? gaana = null,
+    Object? awa = null,
+    Object? kkbox = null,
+    Object? sevendigital = null,
+    Object? musicbrain = null,
   }) {
     return _then(_value.copyWith(
-      youtube: freezed == youtube
-          ? _value.youtube
-          : youtube // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      deezer: freezed == deezer
-          ? _value.deezer
-          : deezer // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      gaana: freezed == gaana
-          ? _value.gaana
-          : gaana // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      awa: freezed == awa
-          ? _value.awa
-          : awa // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      kkbox: freezed == kkbox
-          ? _value.kkbox
-          : kkbox // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      spotify: freezed == spotify
+      spotify: null == spotify
           ? _value.spotify
           : spotify // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      applemusic: freezed == applemusic
+              as List<SongMetadataSource>,
+      applemusic: null == applemusic
           ? _value.applemusic
           : applemusic // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
+              as List<SongMetadataSource>,
+      youtube: null == youtube
+          ? _value.youtube
+          : youtube // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      itunes: null == itunes
+          ? _value.itunes
+          : itunes // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      deezer: null == deezer
+          ? _value.deezer
+          : deezer // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      tidal: null == tidal
+          ? _value.tidal
+          : tidal // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      gaana: null == gaana
+          ? _value.gaana
+          : gaana // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      awa: null == awa
+          ? _value.awa
+          : awa // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      kkbox: null == kkbox
+          ? _value.kkbox
+          : kkbox // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      sevendigital: null == sevendigital
+          ? _value.sevendigital
+          : sevendigital // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      musicbrain: null == musicbrain
+          ? _value.musicbrain
+          : musicbrain // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
     ) as $Val);
   }
 }
@@ -994,13 +1023,17 @@ abstract class _$$_ExternalMetadataListCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<SongMetadataSource>? youtube,
-      List<SongMetadataSource>? deezer,
-      List<SongMetadataSource>? gaana,
-      List<SongMetadataSource>? awa,
-      List<SongMetadataSource>? kkbox,
-      List<SongMetadataSource>? spotify,
-      List<SongMetadataSource>? applemusic});
+      {List<SongMetadataSource> spotify,
+      List<SongMetadataSource> applemusic,
+      List<SongMetadataSource> youtube,
+      List<SongMetadataSource> itunes,
+      List<SongMetadataSource> deezer,
+      List<SongMetadataSource> tidal,
+      List<SongMetadataSource> gaana,
+      List<SongMetadataSource> awa,
+      List<SongMetadataSource> kkbox,
+      @JsonKey(name: '7digital') List<SongMetadataSource> sevendigital,
+      List<SongMetadataSource> musicbrain});
 }
 
 /// @nodoc
@@ -1014,43 +1047,63 @@ class __$$_ExternalMetadataListCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? youtube = freezed,
-    Object? deezer = freezed,
-    Object? gaana = freezed,
-    Object? awa = freezed,
-    Object? kkbox = freezed,
-    Object? spotify = freezed,
-    Object? applemusic = freezed,
+    Object? spotify = null,
+    Object? applemusic = null,
+    Object? youtube = null,
+    Object? itunes = null,
+    Object? deezer = null,
+    Object? tidal = null,
+    Object? gaana = null,
+    Object? awa = null,
+    Object? kkbox = null,
+    Object? sevendigital = null,
+    Object? musicbrain = null,
   }) {
     return _then(_$_ExternalMetadataList(
-      youtube: freezed == youtube
-          ? _value._youtube
-          : youtube // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      deezer: freezed == deezer
-          ? _value._deezer
-          : deezer // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      gaana: freezed == gaana
-          ? _value._gaana
-          : gaana // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      awa: freezed == awa
-          ? _value._awa
-          : awa // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      kkbox: freezed == kkbox
-          ? _value._kkbox
-          : kkbox // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      spotify: freezed == spotify
+      spotify: null == spotify
           ? _value._spotify
           : spotify // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
-      applemusic: freezed == applemusic
+              as List<SongMetadataSource>,
+      applemusic: null == applemusic
           ? _value._applemusic
           : applemusic // ignore: cast_nullable_to_non_nullable
-              as List<SongMetadataSource>?,
+              as List<SongMetadataSource>,
+      youtube: null == youtube
+          ? _value._youtube
+          : youtube // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      itunes: null == itunes
+          ? _value._itunes
+          : itunes // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      deezer: null == deezer
+          ? _value._deezer
+          : deezer // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      tidal: null == tidal
+          ? _value._tidal
+          : tidal // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      gaana: null == gaana
+          ? _value._gaana
+          : gaana // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      awa: null == awa
+          ? _value._awa
+          : awa // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      kkbox: null == kkbox
+          ? _value._kkbox
+          : kkbox // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      sevendigital: null == sevendigital
+          ? _value._sevendigital
+          : sevendigital // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
+      musicbrain: null == musicbrain
+          ? _value._musicbrain
+          : musicbrain // ignore: cast_nullable_to_non_nullable
+              as List<SongMetadataSource>,
     ));
   }
 }
@@ -1059,90 +1112,124 @@ class __$$_ExternalMetadataListCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ExternalMetadataList implements _ExternalMetadataList {
   const _$_ExternalMetadataList(
-      {final List<SongMetadataSource>? youtube,
-      final List<SongMetadataSource>? deezer,
-      final List<SongMetadataSource>? gaana,
-      final List<SongMetadataSource>? awa,
-      final List<SongMetadataSource>? kkbox,
-      final List<SongMetadataSource>? spotify,
-      final List<SongMetadataSource>? applemusic})
-      : _youtube = youtube,
+      {final List<SongMetadataSource> spotify = const <SongMetadataSource>[],
+      final List<SongMetadataSource> applemusic = const <SongMetadataSource>[],
+      final List<SongMetadataSource> youtube = const <SongMetadataSource>[],
+      final List<SongMetadataSource> itunes = const <SongMetadataSource>[],
+      final List<SongMetadataSource> deezer = const <SongMetadataSource>[],
+      final List<SongMetadataSource> tidal = const <SongMetadataSource>[],
+      final List<SongMetadataSource> gaana = const <SongMetadataSource>[],
+      final List<SongMetadataSource> awa = const <SongMetadataSource>[],
+      final List<SongMetadataSource> kkbox = const <SongMetadataSource>[],
+      @JsonKey(name: '7digital') final List<SongMetadataSource> sevendigital =
+          const <SongMetadataSource>[],
+      final List<SongMetadataSource> musicbrain = const <SongMetadataSource>[]})
+      : _spotify = spotify,
+        _applemusic = applemusic,
+        _youtube = youtube,
+        _itunes = itunes,
         _deezer = deezer,
+        _tidal = tidal,
         _gaana = gaana,
         _awa = awa,
         _kkbox = kkbox,
-        _spotify = spotify,
-        _applemusic = applemusic;
+        _sevendigital = sevendigital,
+        _musicbrain = musicbrain;
 
   factory _$_ExternalMetadataList.fromJson(Map<String, dynamic> json) =>
       _$$_ExternalMetadataListFromJson(json);
 
-  final List<SongMetadataSource>? _youtube;
+  final List<SongMetadataSource> _spotify;
   @override
-  List<SongMetadataSource>? get youtube {
-    final value = _youtube;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get spotify {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_spotify);
   }
 
-  final List<SongMetadataSource>? _deezer;
+  final List<SongMetadataSource> _applemusic;
   @override
-  List<SongMetadataSource>? get deezer {
-    final value = _deezer;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get applemusic {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_applemusic);
   }
 
-  final List<SongMetadataSource>? _gaana;
+  final List<SongMetadataSource> _youtube;
   @override
-  List<SongMetadataSource>? get gaana {
-    final value = _gaana;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get youtube {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_youtube);
   }
 
-  final List<SongMetadataSource>? _awa;
+  final List<SongMetadataSource> _itunes;
   @override
-  List<SongMetadataSource>? get awa {
-    final value = _awa;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get itunes {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_itunes);
   }
 
-  final List<SongMetadataSource>? _kkbox;
+  final List<SongMetadataSource> _deezer;
   @override
-  List<SongMetadataSource>? get kkbox {
-    final value = _kkbox;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get deezer {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_deezer);
   }
 
-  final List<SongMetadataSource>? _spotify;
+  final List<SongMetadataSource> _tidal;
   @override
-  List<SongMetadataSource>? get spotify {
-    final value = _spotify;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get tidal {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_tidal);
   }
 
-  final List<SongMetadataSource>? _applemusic;
+  final List<SongMetadataSource> _gaana;
   @override
-  List<SongMetadataSource>? get applemusic {
-    final value = _applemusic;
-    if (value == null) return null;
+  @JsonKey()
+  List<SongMetadataSource> get gaana {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_gaana);
+  }
+
+  final List<SongMetadataSource> _awa;
+  @override
+  @JsonKey()
+  List<SongMetadataSource> get awa {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_awa);
+  }
+
+  final List<SongMetadataSource> _kkbox;
+  @override
+  @JsonKey()
+  List<SongMetadataSource> get kkbox {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_kkbox);
+  }
+
+  final List<SongMetadataSource> _sevendigital;
+  @override
+  @JsonKey(name: '7digital')
+  List<SongMetadataSource> get sevendigital {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sevendigital);
+  }
+
+  final List<SongMetadataSource> _musicbrain;
+  @override
+  @JsonKey()
+  List<SongMetadataSource> get musicbrain {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_musicbrain);
   }
 
   @override
   String toString() {
-    return 'ExternalMetadataList(youtube: $youtube, deezer: $deezer, gaana: $gaana, awa: $awa, kkbox: $kkbox, spotify: $spotify, applemusic: $applemusic)';
+    return 'ExternalMetadataList(spotify: $spotify, applemusic: $applemusic, youtube: $youtube, itunes: $itunes, deezer: $deezer, tidal: $tidal, gaana: $gaana, awa: $awa, kkbox: $kkbox, sevendigital: $sevendigital, musicbrain: $musicbrain)';
   }
 
   @override
@@ -1150,27 +1237,37 @@ class _$_ExternalMetadataList implements _ExternalMetadataList {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ExternalMetadataList &&
+            const DeepCollectionEquality().equals(other._spotify, _spotify) &&
+            const DeepCollectionEquality()
+                .equals(other._applemusic, _applemusic) &&
             const DeepCollectionEquality().equals(other._youtube, _youtube) &&
+            const DeepCollectionEquality().equals(other._itunes, _itunes) &&
             const DeepCollectionEquality().equals(other._deezer, _deezer) &&
+            const DeepCollectionEquality().equals(other._tidal, _tidal) &&
             const DeepCollectionEquality().equals(other._gaana, _gaana) &&
             const DeepCollectionEquality().equals(other._awa, _awa) &&
             const DeepCollectionEquality().equals(other._kkbox, _kkbox) &&
-            const DeepCollectionEquality().equals(other._spotify, _spotify) &&
             const DeepCollectionEquality()
-                .equals(other._applemusic, _applemusic));
+                .equals(other._sevendigital, _sevendigital) &&
+            const DeepCollectionEquality()
+                .equals(other._musicbrain, _musicbrain));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(_spotify),
+      const DeepCollectionEquality().hash(_applemusic),
       const DeepCollectionEquality().hash(_youtube),
+      const DeepCollectionEquality().hash(_itunes),
       const DeepCollectionEquality().hash(_deezer),
+      const DeepCollectionEquality().hash(_tidal),
       const DeepCollectionEquality().hash(_gaana),
       const DeepCollectionEquality().hash(_awa),
       const DeepCollectionEquality().hash(_kkbox),
-      const DeepCollectionEquality().hash(_spotify),
-      const DeepCollectionEquality().hash(_applemusic));
+      const DeepCollectionEquality().hash(_sevendigital),
+      const DeepCollectionEquality().hash(_musicbrain));
 
   @JsonKey(ignore: true)
   @override
@@ -1189,31 +1286,44 @@ class _$_ExternalMetadataList implements _ExternalMetadataList {
 
 abstract class _ExternalMetadataList implements ExternalMetadataList {
   const factory _ExternalMetadataList(
-      {final List<SongMetadataSource>? youtube,
-      final List<SongMetadataSource>? deezer,
-      final List<SongMetadataSource>? gaana,
-      final List<SongMetadataSource>? awa,
-      final List<SongMetadataSource>? kkbox,
-      final List<SongMetadataSource>? spotify,
-      final List<SongMetadataSource>? applemusic}) = _$_ExternalMetadataList;
+      {final List<SongMetadataSource> spotify,
+      final List<SongMetadataSource> applemusic,
+      final List<SongMetadataSource> youtube,
+      final List<SongMetadataSource> itunes,
+      final List<SongMetadataSource> deezer,
+      final List<SongMetadataSource> tidal,
+      final List<SongMetadataSource> gaana,
+      final List<SongMetadataSource> awa,
+      final List<SongMetadataSource> kkbox,
+      @JsonKey(name: '7digital') final List<SongMetadataSource> sevendigital,
+      final List<SongMetadataSource> musicbrain}) = _$_ExternalMetadataList;
 
   factory _ExternalMetadataList.fromJson(Map<String, dynamic> json) =
       _$_ExternalMetadataList.fromJson;
 
   @override
-  List<SongMetadataSource>? get youtube;
+  List<SongMetadataSource> get spotify;
   @override
-  List<SongMetadataSource>? get deezer;
+  List<SongMetadataSource> get applemusic;
   @override
-  List<SongMetadataSource>? get gaana;
+  List<SongMetadataSource> get youtube;
   @override
-  List<SongMetadataSource>? get awa;
+  List<SongMetadataSource> get itunes;
   @override
-  List<SongMetadataSource>? get kkbox;
+  List<SongMetadataSource> get deezer;
   @override
-  List<SongMetadataSource>? get spotify;
+  List<SongMetadataSource> get tidal;
   @override
-  List<SongMetadataSource>? get applemusic;
+  List<SongMetadataSource> get gaana;
+  @override
+  List<SongMetadataSource> get awa;
+  @override
+  List<SongMetadataSource> get kkbox;
+  @override
+  @JsonKey(name: '7digital')
+  List<SongMetadataSource> get sevendigital;
+  @override
+  List<SongMetadataSource> get musicbrain;
   @override
   @JsonKey(ignore: true)
   _$$_ExternalMetadataListCopyWith<_$_ExternalMetadataList> get copyWith =>

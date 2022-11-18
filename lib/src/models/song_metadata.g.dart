@@ -82,39 +82,77 @@ Map<String, dynamic> _$$_ArtistToJson(_$_Artist instance) => <String, dynamic>{
 _$_ExternalMetadataList _$$_ExternalMetadataListFromJson(
         Map<String, dynamic> json) =>
     _$_ExternalMetadataList(
-      youtube: (json['youtube'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      deezer: (json['deezer'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      gaana: (json['gaana'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      awa: (json['awa'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      kkbox: (json['kkbox'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
       spotify: (json['spotify'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
       applemusic: (json['applemusic'] as List<dynamic>?)
-          ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      youtube: (json['youtube'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      itunes: (json['itunes'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      deezer: (json['deezer'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      tidal: (json['tidal'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      gaana: (json['gaana'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      awa: (json['awa'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      kkbox: (json['kkbox'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      sevendigital: (json['7digital'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
+      musicbrain: (json['musicbrain'] as List<dynamic>?)
+              ?.map(
+                  (e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <SongMetadataSource>[],
     );
 
 Map<String, dynamic> _$$_ExternalMetadataListToJson(
         _$_ExternalMetadataList instance) =>
     <String, dynamic>{
+      'spotify': instance.spotify,
+      'applemusic': instance.applemusic,
       'youtube': instance.youtube,
+      'itunes': instance.itunes,
       'deezer': instance.deezer,
+      'tidal': instance.tidal,
       'gaana': instance.gaana,
       'awa': instance.awa,
       'kkbox': instance.kkbox,
-      'spotify': instance.spotify,
-      'applemusic': instance.applemusic,
+      '7digital': instance.sevendigital,
+      'musicbrain': instance.musicbrain,
     };
 
 _$_SongMetadataSource _$$_SongMetadataSourceFromJson(
