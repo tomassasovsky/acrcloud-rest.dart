@@ -1116,7 +1116,7 @@ class __$$_ExternalMetadataListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ExternalMetadataList implements _ExternalMetadataList {
+class _$_ExternalMetadataList extends _ExternalMetadataList {
   const _$_ExternalMetadataList(
       {final List<SongMetadataSource> spotify = const <SongMetadataSource>[],
       final List<SongMetadataSource> applemusic = const <SongMetadataSource>[],
@@ -1140,7 +1140,8 @@ class _$_ExternalMetadataList implements _ExternalMetadataList {
         _awa = awa,
         _kkbox = kkbox,
         _sevendigital = sevendigital,
-        _musicbrain = musicbrain;
+        _musicbrain = musicbrain,
+        super._();
 
   factory _$_ExternalMetadataList.fromJson(Map<String, dynamic> json) =>
       _$$_ExternalMetadataListFromJson(json);
@@ -1290,7 +1291,7 @@ class _$_ExternalMetadataList implements _ExternalMetadataList {
   }
 }
 
-abstract class _ExternalMetadataList implements ExternalMetadataList {
+abstract class _ExternalMetadataList extends ExternalMetadataList {
   const factory _ExternalMetadataList(
       {final List<SongMetadataSource> spotify,
       final List<SongMetadataSource> applemusic,
@@ -1303,6 +1304,7 @@ abstract class _ExternalMetadataList implements ExternalMetadataList {
       final List<SongMetadataSource> kkbox,
       @JsonKey(name: '7digital') final List<SongMetadataSource> sevendigital,
       final List<SongMetadataSource> musicbrain}) = _$_ExternalMetadataList;
+  const _ExternalMetadataList._() : super._();
 
   factory _ExternalMetadataList.fromJson(Map<String, dynamic> json) =
       _$_ExternalMetadataList.fromJson;

@@ -1,3 +1,7 @@
+# 0.1.0+5
+
+- feat: labels for SongPlatforms
+
 # 0.1.0+4
 
 - feat: added access to the SongPlatforms from within a SongMetadataSource

@@ -105,6 +105,8 @@ class ExternalMetadataList with _$ExternalMetadataList {
     @Default(<SongMetadataSource>[]) List<SongMetadataSource> musicbrain,
   }) = _ExternalMetadataList;
 
+  const ExternalMetadataList._();
+
   factory ExternalMetadataList.fromJson(Map<String, dynamic> json) =>
       _$ExternalMetadataListFromJson(json);
 
