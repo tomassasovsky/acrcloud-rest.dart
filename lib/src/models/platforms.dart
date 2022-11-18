@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs
 
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum SongPlatforms {
   spotify,
   applemusic,
@@ -10,6 +12,7 @@ enum SongPlatforms {
   gaana,
   awa,
   kkbox,
+  @JsonValue('7digital')
   sevendigital,
   musicbrainz;
 

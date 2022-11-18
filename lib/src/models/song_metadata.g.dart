@@ -20,10 +20,8 @@ _$_SongMetadataResponse _$$_SongMetadataResponseFromJson(
           ? null
           : Album.fromJson(json['album'] as Map<String, dynamic>),
       label: json['label'] as String?,
-      externalMetadata: json['external_metadata'] == null
-          ? null
-          : ExternalMetadataList.fromJson(
-              json['external_metadata'] as Map<String, dynamic>),
+      externalMetadata: _externalMetadataFromJSON(
+          json['external_metadata'] as Map<String, dynamic>),
       type: json['type'] as String?,
     );
 
@@ -162,6 +160,7 @@ _$_SongMetadataSource _$$_SongMetadataSourceFromJson(
       link: json['link'] as String?,
       preview: json['preview'] as String?,
       vid: json['vid'] as String?,
+      songPlatform: $enumDecode(_$SongPlatformsEnumMap, json['song_platform']),
     );
 
 Map<String, dynamic> _$$_SongMetadataSourceToJson(
@@ -171,4 +170,19 @@ Map<String, dynamic> _$$_SongMetadataSourceToJson(
       'link': instance.link,
       'preview': instance.preview,
       'vid': instance.vid,
+      'song_platform': _$SongPlatformsEnumMap[instance.songPlatform]!,
     };
+
+const _$SongPlatformsEnumMap = {
+  SongPlatforms.spotify: 'spotify',
+  SongPlatforms.applemusic: 'applemusic',
+  SongPlatforms.youtube: 'youtube',
+  SongPlatforms.itunes: 'itunes',
+  SongPlatforms.deezer: 'deezer',
+  SongPlatforms.tidal: 'tidal',
+  SongPlatforms.gaana: 'gaana',
+  SongPlatforms.awa: 'awa',
+  SongPlatforms.kkbox: 'kkbox',
+  SongPlatforms.sevendigital: '7digital',
+  SongPlatforms.musicbrainz: 'musicbrainz',
+};

@@ -1,9 +1,10 @@
 // To parse this JSON data, do
 //
 //     final songMetadataResponse = songMetadataResponseFromJson(jsonString);
-// ignore_for_file: public_member_api_docs
+// ignore_for_file: public_member_api_docs, invalid_annotation_target
 
 import 'dart:convert';
+import 'package:acrcloud_rest/acrcloud_rest.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'song_metadata.freezed.dart';
@@ -33,12 +34,24 @@ class SongMetadata with _$SongMetadata {
     List<Artist>? artists,
     Album? album,
     String? label,
-    ExternalMetadataList? externalMetadata,
+    @JsonKey(fromJson: _externalMetadataFromJSON)
+        ExternalMetadataList? externalMetadata,
     String? type,
   }) = _SongMetadataResponse;
 
   factory SongMetadata.fromJson(Map<dynamic, dynamic> json) =>
       _$SongMetadataFromJson(json.cast());
+}
+
+ExternalMetadataList _externalMetadataFromJSON(Map<String, dynamic> json) {
+  json.forEach((key, value) {
+    final list = value as List;
+    for (final element in list) {
+      (element as Map)['song_platform'] = key;
+    }
+  });
+
+  return ExternalMetadataList.fromJson(json);
 }
 
 @freezed
@@ -77,34 +90,37 @@ class Artist with _$Artist {
 @freezed
 class ExternalMetadataList with _$ExternalMetadataList {
   const factory ExternalMetadataList({
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> spotify,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> applemusic,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> youtube,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> itunes,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> deezer,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> tidal,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> gaana,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> awa,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> kkbox,
     @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> spotify,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> applemusic,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> youtube,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> itunes,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> deezer,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> tidal,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> gaana,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> awa,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> kkbox,
-    @Default(<SongMetadataSource>[])
-    // ignore: invalid_annotation_target
     @JsonKey(name: '7digital')
         List<SongMetadataSource> sevendigital,
-    @Default(<SongMetadataSource>[])
-        List<SongMetadataSource> musicbrain,
+    @Default(<SongMetadataSource>[]) List<SongMetadataSource> musicbrain,
   }) = _ExternalMetadataList;
 
   factory ExternalMetadataList.fromJson(Map<String, dynamic> json) =>
       _$ExternalMetadataListFromJson(json);
+
+  List<List<SongMetadataSource>> get all => [
+        spotify,
+        applemusic,
+        youtube,
+        itunes,
+        deezer,
+        tidal,
+        gaana,
+        awa,
+        kkbox,
+        sevendigital,
+        musicbrain,
+      ];
 }
 
 @freezed
@@ -114,6 +130,7 @@ class SongMetadataSource with _$SongMetadataSource {
     String? link,
     String? preview,
     String? vid,
+    @JsonKey(name: 'song_platform') required SongPlatforms songPlatform,
   }) = _SongMetadataSource;
 
   factory SongMetadataSource.fromJson(Map<String, dynamic> json) =>
