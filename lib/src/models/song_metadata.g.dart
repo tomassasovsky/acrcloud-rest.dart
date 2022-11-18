@@ -22,7 +22,7 @@ _$_SongMetadataResponse _$$_SongMetadataResponseFromJson(
       label: json['label'] as String?,
       externalMetadata: json['external_metadata'] == null
           ? null
-          : ExternalMetadata.fromJson(
+          : ExternalMetadataList.fromJson(
               json['external_metadata'] as Map<String, dynamic>),
       type: json['type'] as String?,
     );
@@ -79,8 +79,9 @@ Map<String, dynamic> _$$_ArtistToJson(_$_Artist instance) => <String, dynamic>{
       'name': instance.name,
     };
 
-_$_ExternalMetadata _$$_ExternalMetadataFromJson(Map<String, dynamic> json) =>
-    _$_ExternalMetadata(
+_$_ExternalMetadataList _$$_ExternalMetadataListFromJson(
+        Map<String, dynamic> json) =>
+    _$_ExternalMetadataList(
       youtube: (json['youtube'] as List<dynamic>?)
           ?.map((e) => SongMetadataSource.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -104,7 +105,8 @@ _$_ExternalMetadata _$$_ExternalMetadataFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_ExternalMetadataToJson(_$_ExternalMetadata instance) =>
+Map<String, dynamic> _$$_ExternalMetadataListToJson(
+        _$_ExternalMetadataList instance) =>
     <String, dynamic>{
       'youtube': instance.youtube,
       'deezer': instance.deezer,
@@ -121,6 +123,7 @@ _$_SongMetadataSource _$$_SongMetadataSourceFromJson(
       id: json['id'] as String?,
       link: json['link'] as String?,
       preview: json['preview'] as String?,
+      vid: json['vid'] as String?,
     );
 
 Map<String, dynamic> _$$_SongMetadataSourceToJson(
@@ -129,4 +132,5 @@ Map<String, dynamic> _$$_SongMetadataSourceToJson(
       'id': instance.id,
       'link': instance.link,
       'preview': instance.preview,
+      'vid': instance.vid,
     };

@@ -27,7 +27,8 @@ mixin _$SongMetadata {
   List<Artist>? get artists => throw _privateConstructorUsedError;
   Album? get album => throw _privateConstructorUsedError;
   String? get label => throw _privateConstructorUsedError;
-  ExternalMetadata? get externalMetadata => throw _privateConstructorUsedError;
+  ExternalMetadataList? get externalMetadata =>
+      throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,11 +51,11 @@ abstract class $SongMetadataCopyWith<$Res> {
       List<Artist>? artists,
       Album? album,
       String? label,
-      ExternalMetadata? externalMetadata,
+      ExternalMetadataList? externalMetadata,
       String? type});
 
   $AlbumCopyWith<$Res>? get album;
-  $ExternalMetadataCopyWith<$Res>? get externalMetadata;
+  $ExternalMetadataListCopyWith<$Res>? get externalMetadata;
 }
 
 /// @nodoc
@@ -112,7 +113,7 @@ class _$SongMetadataCopyWithImpl<$Res, $Val extends SongMetadata>
       externalMetadata: freezed == externalMetadata
           ? _value.externalMetadata
           : externalMetadata // ignore: cast_nullable_to_non_nullable
-              as ExternalMetadata?,
+              as ExternalMetadataList?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -134,12 +135,13 @@ class _$SongMetadataCopyWithImpl<$Res, $Val extends SongMetadata>
 
   @override
   @pragma('vm:prefer-inline')
-  $ExternalMetadataCopyWith<$Res>? get externalMetadata {
+  $ExternalMetadataListCopyWith<$Res>? get externalMetadata {
     if (_value.externalMetadata == null) {
       return null;
     }
 
-    return $ExternalMetadataCopyWith<$Res>(_value.externalMetadata!, (value) {
+    return $ExternalMetadataListCopyWith<$Res>(_value.externalMetadata!,
+        (value) {
       return _then(_value.copyWith(externalMetadata: value) as $Val);
     });
   }
@@ -161,13 +163,13 @@ abstract class _$$_SongMetadataResponseCopyWith<$Res>
       List<Artist>? artists,
       Album? album,
       String? label,
-      ExternalMetadata? externalMetadata,
+      ExternalMetadataList? externalMetadata,
       String? type});
 
   @override
   $AlbumCopyWith<$Res>? get album;
   @override
-  $ExternalMetadataCopyWith<$Res>? get externalMetadata;
+  $ExternalMetadataListCopyWith<$Res>? get externalMetadata;
 }
 
 /// @nodoc
@@ -223,7 +225,7 @@ class __$$_SongMetadataResponseCopyWithImpl<$Res>
       externalMetadata: freezed == externalMetadata
           ? _value.externalMetadata
           : externalMetadata // ignore: cast_nullable_to_non_nullable
-              as ExternalMetadata?,
+              as ExternalMetadataList?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -272,7 +274,7 @@ class _$_SongMetadataResponse implements _SongMetadataResponse {
   @override
   final String? label;
   @override
-  final ExternalMetadata? externalMetadata;
+  final ExternalMetadataList? externalMetadata;
   @override
   final String? type;
 
@@ -338,7 +340,7 @@ abstract class _SongMetadataResponse implements SongMetadata {
       final List<Artist>? artists,
       final Album? album,
       final String? label,
-      final ExternalMetadata? externalMetadata,
+      final ExternalMetadataList? externalMetadata,
       final String? type}) = _$_SongMetadataResponse;
 
   factory _SongMetadataResponse.fromJson(Map<String, dynamic> json) =
@@ -359,7 +361,7 @@ abstract class _SongMetadataResponse implements SongMetadata {
   @override
   String? get label;
   @override
-  ExternalMetadata? get externalMetadata;
+  ExternalMetadataList? get externalMetadata;
   @override
   String? get type;
   @override
@@ -891,12 +893,12 @@ abstract class _Artist implements Artist {
       throw _privateConstructorUsedError;
 }
 
-ExternalMetadata _$ExternalMetadataFromJson(Map<String, dynamic> json) {
-  return _ExternalMetadata.fromJson(json);
+ExternalMetadataList _$ExternalMetadataListFromJson(Map<String, dynamic> json) {
+  return _ExternalMetadataList.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ExternalMetadata {
+mixin _$ExternalMetadataList {
   List<SongMetadataSource>? get youtube => throw _privateConstructorUsedError;
   List<SongMetadataSource>? get deezer => throw _privateConstructorUsedError;
   List<SongMetadataSource>? get gaana => throw _privateConstructorUsedError;
@@ -908,15 +910,15 @@ mixin _$ExternalMetadata {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ExternalMetadataCopyWith<ExternalMetadata> get copyWith =>
+  $ExternalMetadataListCopyWith<ExternalMetadataList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExternalMetadataCopyWith<$Res> {
-  factory $ExternalMetadataCopyWith(
-          ExternalMetadata value, $Res Function(ExternalMetadata) then) =
-      _$ExternalMetadataCopyWithImpl<$Res, ExternalMetadata>;
+abstract class $ExternalMetadataListCopyWith<$Res> {
+  factory $ExternalMetadataListCopyWith(ExternalMetadataList value,
+          $Res Function(ExternalMetadataList) then) =
+      _$ExternalMetadataListCopyWithImpl<$Res, ExternalMetadataList>;
   @useResult
   $Res call(
       {List<SongMetadataSource>? youtube,
@@ -929,9 +931,10 @@ abstract class $ExternalMetadataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExternalMetadataCopyWithImpl<$Res, $Val extends ExternalMetadata>
-    implements $ExternalMetadataCopyWith<$Res> {
-  _$ExternalMetadataCopyWithImpl(this._value, this._then);
+class _$ExternalMetadataListCopyWithImpl<$Res,
+        $Val extends ExternalMetadataList>
+    implements $ExternalMetadataListCopyWith<$Res> {
+  _$ExternalMetadataListCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -983,11 +986,11 @@ class _$ExternalMetadataCopyWithImpl<$Res, $Val extends ExternalMetadata>
 }
 
 /// @nodoc
-abstract class _$$_ExternalMetadataCopyWith<$Res>
-    implements $ExternalMetadataCopyWith<$Res> {
-  factory _$$_ExternalMetadataCopyWith(
-          _$_ExternalMetadata value, $Res Function(_$_ExternalMetadata) then) =
-      __$$_ExternalMetadataCopyWithImpl<$Res>;
+abstract class _$$_ExternalMetadataListCopyWith<$Res>
+    implements $ExternalMetadataListCopyWith<$Res> {
+  factory _$$_ExternalMetadataListCopyWith(_$_ExternalMetadataList value,
+          $Res Function(_$_ExternalMetadataList) then) =
+      __$$_ExternalMetadataListCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1001,11 +1004,11 @@ abstract class _$$_ExternalMetadataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ExternalMetadataCopyWithImpl<$Res>
-    extends _$ExternalMetadataCopyWithImpl<$Res, _$_ExternalMetadata>
-    implements _$$_ExternalMetadataCopyWith<$Res> {
-  __$$_ExternalMetadataCopyWithImpl(
-      _$_ExternalMetadata _value, $Res Function(_$_ExternalMetadata) _then)
+class __$$_ExternalMetadataListCopyWithImpl<$Res>
+    extends _$ExternalMetadataListCopyWithImpl<$Res, _$_ExternalMetadataList>
+    implements _$$_ExternalMetadataListCopyWith<$Res> {
+  __$$_ExternalMetadataListCopyWithImpl(_$_ExternalMetadataList _value,
+      $Res Function(_$_ExternalMetadataList) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1019,7 +1022,7 @@ class __$$_ExternalMetadataCopyWithImpl<$Res>
     Object? spotify = freezed,
     Object? applemusic = freezed,
   }) {
-    return _then(_$_ExternalMetadata(
+    return _then(_$_ExternalMetadataList(
       youtube: freezed == youtube
           ? _value._youtube
           : youtube // ignore: cast_nullable_to_non_nullable
@@ -1054,8 +1057,8 @@ class __$$_ExternalMetadataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ExternalMetadata implements _ExternalMetadata {
-  const _$_ExternalMetadata(
+class _$_ExternalMetadataList implements _ExternalMetadataList {
+  const _$_ExternalMetadataList(
       {final List<SongMetadataSource>? youtube,
       final List<SongMetadataSource>? deezer,
       final List<SongMetadataSource>? gaana,
@@ -1071,8 +1074,8 @@ class _$_ExternalMetadata implements _ExternalMetadata {
         _spotify = spotify,
         _applemusic = applemusic;
 
-  factory _$_ExternalMetadata.fromJson(Map<String, dynamic> json) =>
-      _$$_ExternalMetadataFromJson(json);
+  factory _$_ExternalMetadataList.fromJson(Map<String, dynamic> json) =>
+      _$$_ExternalMetadataListFromJson(json);
 
   final List<SongMetadataSource>? _youtube;
   @override
@@ -1139,14 +1142,14 @@ class _$_ExternalMetadata implements _ExternalMetadata {
 
   @override
   String toString() {
-    return 'ExternalMetadata(youtube: $youtube, deezer: $deezer, gaana: $gaana, awa: $awa, kkbox: $kkbox, spotify: $spotify, applemusic: $applemusic)';
+    return 'ExternalMetadataList(youtube: $youtube, deezer: $deezer, gaana: $gaana, awa: $awa, kkbox: $kkbox, spotify: $spotify, applemusic: $applemusic)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ExternalMetadata &&
+            other is _$_ExternalMetadataList &&
             const DeepCollectionEquality().equals(other._youtube, _youtube) &&
             const DeepCollectionEquality().equals(other._deezer, _deezer) &&
             const DeepCollectionEquality().equals(other._gaana, _gaana) &&
@@ -1172,29 +1175,30 @@ class _$_ExternalMetadata implements _ExternalMetadata {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ExternalMetadataCopyWith<_$_ExternalMetadata> get copyWith =>
-      __$$_ExternalMetadataCopyWithImpl<_$_ExternalMetadata>(this, _$identity);
+  _$$_ExternalMetadataListCopyWith<_$_ExternalMetadataList> get copyWith =>
+      __$$_ExternalMetadataListCopyWithImpl<_$_ExternalMetadataList>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ExternalMetadataToJson(
+    return _$$_ExternalMetadataListToJson(
       this,
     );
   }
 }
 
-abstract class _ExternalMetadata implements ExternalMetadata {
-  const factory _ExternalMetadata(
+abstract class _ExternalMetadataList implements ExternalMetadataList {
+  const factory _ExternalMetadataList(
       {final List<SongMetadataSource>? youtube,
       final List<SongMetadataSource>? deezer,
       final List<SongMetadataSource>? gaana,
       final List<SongMetadataSource>? awa,
       final List<SongMetadataSource>? kkbox,
       final List<SongMetadataSource>? spotify,
-      final List<SongMetadataSource>? applemusic}) = _$_ExternalMetadata;
+      final List<SongMetadataSource>? applemusic}) = _$_ExternalMetadataList;
 
-  factory _ExternalMetadata.fromJson(Map<String, dynamic> json) =
-      _$_ExternalMetadata.fromJson;
+  factory _ExternalMetadataList.fromJson(Map<String, dynamic> json) =
+      _$_ExternalMetadataList.fromJson;
 
   @override
   List<SongMetadataSource>? get youtube;
@@ -1212,7 +1216,7 @@ abstract class _ExternalMetadata implements ExternalMetadata {
   List<SongMetadataSource>? get applemusic;
   @override
   @JsonKey(ignore: true)
-  _$$_ExternalMetadataCopyWith<_$_ExternalMetadata> get copyWith =>
+  _$$_ExternalMetadataListCopyWith<_$_ExternalMetadataList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1225,6 +1229,7 @@ mixin _$SongMetadataSource {
   String? get id => throw _privateConstructorUsedError;
   String? get link => throw _privateConstructorUsedError;
   String? get preview => throw _privateConstructorUsedError;
+  String? get vid => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1238,7 +1243,7 @@ abstract class $SongMetadataSourceCopyWith<$Res> {
           SongMetadataSource value, $Res Function(SongMetadataSource) then) =
       _$SongMetadataSourceCopyWithImpl<$Res, SongMetadataSource>;
   @useResult
-  $Res call({String? id, String? link, String? preview});
+  $Res call({String? id, String? link, String? preview, String? vid});
 }
 
 /// @nodoc
@@ -1257,6 +1262,7 @@ class _$SongMetadataSourceCopyWithImpl<$Res, $Val extends SongMetadataSource>
     Object? id = freezed,
     Object? link = freezed,
     Object? preview = freezed,
+    Object? vid = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1271,6 +1277,10 @@ class _$SongMetadataSourceCopyWithImpl<$Res, $Val extends SongMetadataSource>
           ? _value.preview
           : preview // ignore: cast_nullable_to_non_nullable
               as String?,
+      vid: freezed == vid
+          ? _value.vid
+          : vid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -1283,7 +1293,7 @@ abstract class _$$_SongMetadataSourceCopyWith<$Res>
       __$$_SongMetadataSourceCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? link, String? preview});
+  $Res call({String? id, String? link, String? preview, String? vid});
 }
 
 /// @nodoc
@@ -1300,6 +1310,7 @@ class __$$_SongMetadataSourceCopyWithImpl<$Res>
     Object? id = freezed,
     Object? link = freezed,
     Object? preview = freezed,
+    Object? vid = freezed,
   }) {
     return _then(_$_SongMetadataSource(
       id: freezed == id
@@ -1314,6 +1325,10 @@ class __$$_SongMetadataSourceCopyWithImpl<$Res>
           ? _value.preview
           : preview // ignore: cast_nullable_to_non_nullable
               as String?,
+      vid: freezed == vid
+          ? _value.vid
+          : vid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1321,7 +1336,7 @@ class __$$_SongMetadataSourceCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SongMetadataSource implements _SongMetadataSource {
-  const _$_SongMetadataSource({this.id, this.link, this.preview});
+  const _$_SongMetadataSource({this.id, this.link, this.preview, this.vid});
 
   factory _$_SongMetadataSource.fromJson(Map<String, dynamic> json) =>
       _$$_SongMetadataSourceFromJson(json);
@@ -1332,10 +1347,12 @@ class _$_SongMetadataSource implements _SongMetadataSource {
   final String? link;
   @override
   final String? preview;
+  @override
+  final String? vid;
 
   @override
   String toString() {
-    return 'SongMetadataSource(id: $id, link: $link, preview: $preview)';
+    return 'SongMetadataSource(id: $id, link: $link, preview: $preview, vid: $vid)';
   }
 
   @override
@@ -1345,12 +1362,13 @@ class _$_SongMetadataSource implements _SongMetadataSource {
             other is _$_SongMetadataSource &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.link, link) || other.link == link) &&
-            (identical(other.preview, preview) || other.preview == preview));
+            (identical(other.preview, preview) || other.preview == preview) &&
+            (identical(other.vid, vid) || other.vid == vid));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, link, preview);
+  int get hashCode => Object.hash(runtimeType, id, link, preview, vid);
 
   @JsonKey(ignore: true)
   @override
@@ -1371,7 +1389,8 @@ abstract class _SongMetadataSource implements SongMetadataSource {
   const factory _SongMetadataSource(
       {final String? id,
       final String? link,
-      final String? preview}) = _$_SongMetadataSource;
+      final String? preview,
+      final String? vid}) = _$_SongMetadataSource;
 
   factory _SongMetadataSource.fromJson(Map<String, dynamic> json) =
       _$_SongMetadataSource.fromJson;
@@ -1382,6 +1401,8 @@ abstract class _SongMetadataSource implements SongMetadataSource {
   String? get link;
   @override
   String? get preview;
+  @override
+  String? get vid;
   @override
   @JsonKey(ignore: true)
   _$$_SongMetadataSourceCopyWith<_$_SongMetadataSource> get copyWith =>

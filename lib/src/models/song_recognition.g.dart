@@ -170,6 +170,52 @@ Map<String, dynamic> _$$_ExternalIdsToJson(_$_ExternalIds instance) =>
       'upc': instance.upc,
     };
 
+_$_ExternalMetadata _$$_ExternalMetadataFromJson(Map<String, dynamic> json) =>
+    _$_ExternalMetadata(
+      musicbrainz: (json['musicbrainz'] as List<dynamic>?)
+          ?.map((e) => Musicbrainz.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      deezer: json['deezer'] == null
+          ? null
+          : Deezer.fromJson(json['deezer'] as Map<String, dynamic>),
+      spotify: json['spotify'] == null
+          ? null
+          : Deezer.fromJson(json['spotify'] as Map<String, dynamic>),
+      musicstory: json['musicstory'] == null
+          ? null
+          : Musicstory.fromJson(json['musicstory'] as Map<String, dynamic>),
+      youtube: json['youtube'] == null
+          ? null
+          : Youtube.fromJson(json['youtube'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_ExternalMetadataToJson(_$_ExternalMetadata instance) =>
+    <String, dynamic>{
+      'musicbrainz': instance.musicbrainz,
+      'deezer': instance.deezer,
+      'spotify': instance.spotify,
+      'musicstory': instance.musicstory,
+      'youtube': instance.youtube,
+    };
+
+_$_Deezer _$$_DeezerFromJson(Map<String, dynamic> json) => _$_Deezer(
+      track: json['track'] == null
+          ? null
+          : TrackClass.fromJson(json['track'] as Map<String, dynamic>),
+      artists: (json['artists'] as List<dynamic>?)
+          ?.map((e) => TrackClass.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      album: json['album'] == null
+          ? null
+          : TrackClass.fromJson(json['album'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_DeezerToJson(_$_Deezer instance) => <String, dynamic>{
+      'track': instance.track,
+      'artists': instance.artists,
+      'album': instance.album,
+    };
+
 _$_TrackClass _$$_TrackClassFromJson(Map<String, dynamic> json) =>
     _$_TrackClass(
       id: json['id'] as String?,

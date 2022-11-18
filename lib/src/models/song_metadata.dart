@@ -33,7 +33,7 @@ class SongMetadata with _$SongMetadata {
     List<Artist>? artists,
     Album? album,
     String? label,
-    ExternalMetadata? externalMetadata,
+    ExternalMetadataList? externalMetadata,
     String? type,
   }) = _SongMetadataResponse;
 
@@ -75,8 +75,8 @@ class Artist with _$Artist {
 }
 
 @freezed
-class ExternalMetadata with _$ExternalMetadata {
-  const factory ExternalMetadata({
+class ExternalMetadataList with _$ExternalMetadataList {
+  const factory ExternalMetadataList({
     List<SongMetadataSource>? youtube,
     List<SongMetadataSource>? deezer,
     List<SongMetadataSource>? gaana,
@@ -84,10 +84,10 @@ class ExternalMetadata with _$ExternalMetadata {
     List<SongMetadataSource>? kkbox,
     List<SongMetadataSource>? spotify,
     List<SongMetadataSource>? applemusic,
-  }) = _ExternalMetadata;
+  }) = _ExternalMetadataList;
 
-  factory ExternalMetadata.fromJson(Map<String, dynamic> json) =>
-      _$ExternalMetadataFromJson(json);
+  factory ExternalMetadataList.fromJson(Map<String, dynamic> json) =>
+      _$ExternalMetadataListFromJson(json);
 }
 
 @freezed
@@ -96,6 +96,7 @@ class SongMetadataSource with _$SongMetadataSource {
     String? id,
     String? link,
     String? preview,
+    String? vid,
   }) = _SongMetadataSource;
 
   factory SongMetadataSource.fromJson(Map<String, dynamic> json) =>

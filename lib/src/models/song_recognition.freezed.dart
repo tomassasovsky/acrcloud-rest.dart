@@ -1763,6 +1763,510 @@ abstract class _ExternalIds implements ExternalIds {
       throw _privateConstructorUsedError;
 }
 
+ExternalMetadata _$ExternalMetadataFromJson(Map<String, dynamic> json) {
+  return _ExternalMetadata.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ExternalMetadata {
+  List<Musicbrainz>? get musicbrainz => throw _privateConstructorUsedError;
+  Deezer? get deezer => throw _privateConstructorUsedError;
+  Deezer? get spotify => throw _privateConstructorUsedError;
+  Musicstory? get musicstory => throw _privateConstructorUsedError;
+  Youtube? get youtube => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ExternalMetadataCopyWith<ExternalMetadata> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ExternalMetadataCopyWith<$Res> {
+  factory $ExternalMetadataCopyWith(
+          ExternalMetadata value, $Res Function(ExternalMetadata) then) =
+      _$ExternalMetadataCopyWithImpl<$Res, ExternalMetadata>;
+  @useResult
+  $Res call(
+      {List<Musicbrainz>? musicbrainz,
+      Deezer? deezer,
+      Deezer? spotify,
+      Musicstory? musicstory,
+      Youtube? youtube});
+
+  $DeezerCopyWith<$Res>? get deezer;
+  $DeezerCopyWith<$Res>? get spotify;
+  $MusicstoryCopyWith<$Res>? get musicstory;
+  $YoutubeCopyWith<$Res>? get youtube;
+}
+
+/// @nodoc
+class _$ExternalMetadataCopyWithImpl<$Res, $Val extends ExternalMetadata>
+    implements $ExternalMetadataCopyWith<$Res> {
+  _$ExternalMetadataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? musicbrainz = freezed,
+    Object? deezer = freezed,
+    Object? spotify = freezed,
+    Object? musicstory = freezed,
+    Object? youtube = freezed,
+  }) {
+    return _then(_value.copyWith(
+      musicbrainz: freezed == musicbrainz
+          ? _value.musicbrainz
+          : musicbrainz // ignore: cast_nullable_to_non_nullable
+              as List<Musicbrainz>?,
+      deezer: freezed == deezer
+          ? _value.deezer
+          : deezer // ignore: cast_nullable_to_non_nullable
+              as Deezer?,
+      spotify: freezed == spotify
+          ? _value.spotify
+          : spotify // ignore: cast_nullable_to_non_nullable
+              as Deezer?,
+      musicstory: freezed == musicstory
+          ? _value.musicstory
+          : musicstory // ignore: cast_nullable_to_non_nullable
+              as Musicstory?,
+      youtube: freezed == youtube
+          ? _value.youtube
+          : youtube // ignore: cast_nullable_to_non_nullable
+              as Youtube?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeezerCopyWith<$Res>? get deezer {
+    if (_value.deezer == null) {
+      return null;
+    }
+
+    return $DeezerCopyWith<$Res>(_value.deezer!, (value) {
+      return _then(_value.copyWith(deezer: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeezerCopyWith<$Res>? get spotify {
+    if (_value.spotify == null) {
+      return null;
+    }
+
+    return $DeezerCopyWith<$Res>(_value.spotify!, (value) {
+      return _then(_value.copyWith(spotify: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MusicstoryCopyWith<$Res>? get musicstory {
+    if (_value.musicstory == null) {
+      return null;
+    }
+
+    return $MusicstoryCopyWith<$Res>(_value.musicstory!, (value) {
+      return _then(_value.copyWith(musicstory: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $YoutubeCopyWith<$Res>? get youtube {
+    if (_value.youtube == null) {
+      return null;
+    }
+
+    return $YoutubeCopyWith<$Res>(_value.youtube!, (value) {
+      return _then(_value.copyWith(youtube: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_ExternalMetadataCopyWith<$Res>
+    implements $ExternalMetadataCopyWith<$Res> {
+  factory _$$_ExternalMetadataCopyWith(
+          _$_ExternalMetadata value, $Res Function(_$_ExternalMetadata) then) =
+      __$$_ExternalMetadataCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<Musicbrainz>? musicbrainz,
+      Deezer? deezer,
+      Deezer? spotify,
+      Musicstory? musicstory,
+      Youtube? youtube});
+
+  @override
+  $DeezerCopyWith<$Res>? get deezer;
+  @override
+  $DeezerCopyWith<$Res>? get spotify;
+  @override
+  $MusicstoryCopyWith<$Res>? get musicstory;
+  @override
+  $YoutubeCopyWith<$Res>? get youtube;
+}
+
+/// @nodoc
+class __$$_ExternalMetadataCopyWithImpl<$Res>
+    extends _$ExternalMetadataCopyWithImpl<$Res, _$_ExternalMetadata>
+    implements _$$_ExternalMetadataCopyWith<$Res> {
+  __$$_ExternalMetadataCopyWithImpl(
+      _$_ExternalMetadata _value, $Res Function(_$_ExternalMetadata) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? musicbrainz = freezed,
+    Object? deezer = freezed,
+    Object? spotify = freezed,
+    Object? musicstory = freezed,
+    Object? youtube = freezed,
+  }) {
+    return _then(_$_ExternalMetadata(
+      musicbrainz: freezed == musicbrainz
+          ? _value._musicbrainz
+          : musicbrainz // ignore: cast_nullable_to_non_nullable
+              as List<Musicbrainz>?,
+      deezer: freezed == deezer
+          ? _value.deezer
+          : deezer // ignore: cast_nullable_to_non_nullable
+              as Deezer?,
+      spotify: freezed == spotify
+          ? _value.spotify
+          : spotify // ignore: cast_nullable_to_non_nullable
+              as Deezer?,
+      musicstory: freezed == musicstory
+          ? _value.musicstory
+          : musicstory // ignore: cast_nullable_to_non_nullable
+              as Musicstory?,
+      youtube: freezed == youtube
+          ? _value.youtube
+          : youtube // ignore: cast_nullable_to_non_nullable
+              as Youtube?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ExternalMetadata implements _ExternalMetadata {
+  const _$_ExternalMetadata(
+      {final List<Musicbrainz>? musicbrainz,
+      this.deezer,
+      this.spotify,
+      this.musicstory,
+      this.youtube})
+      : _musicbrainz = musicbrainz;
+
+  factory _$_ExternalMetadata.fromJson(Map<String, dynamic> json) =>
+      _$$_ExternalMetadataFromJson(json);
+
+  final List<Musicbrainz>? _musicbrainz;
+  @override
+  List<Musicbrainz>? get musicbrainz {
+    final value = _musicbrainz;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final Deezer? deezer;
+  @override
+  final Deezer? spotify;
+  @override
+  final Musicstory? musicstory;
+  @override
+  final Youtube? youtube;
+
+  @override
+  String toString() {
+    return 'ExternalMetadata(musicbrainz: $musicbrainz, deezer: $deezer, spotify: $spotify, musicstory: $musicstory, youtube: $youtube)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ExternalMetadata &&
+            const DeepCollectionEquality()
+                .equals(other._musicbrainz, _musicbrainz) &&
+            (identical(other.deezer, deezer) || other.deezer == deezer) &&
+            (identical(other.spotify, spotify) || other.spotify == spotify) &&
+            (identical(other.musicstory, musicstory) ||
+                other.musicstory == musicstory) &&
+            (identical(other.youtube, youtube) || other.youtube == youtube));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_musicbrainz),
+      deezer,
+      spotify,
+      musicstory,
+      youtube);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ExternalMetadataCopyWith<_$_ExternalMetadata> get copyWith =>
+      __$$_ExternalMetadataCopyWithImpl<_$_ExternalMetadata>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ExternalMetadataToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ExternalMetadata implements ExternalMetadata {
+  const factory _ExternalMetadata(
+      {final List<Musicbrainz>? musicbrainz,
+      final Deezer? deezer,
+      final Deezer? spotify,
+      final Musicstory? musicstory,
+      final Youtube? youtube}) = _$_ExternalMetadata;
+
+  factory _ExternalMetadata.fromJson(Map<String, dynamic> json) =
+      _$_ExternalMetadata.fromJson;
+
+  @override
+  List<Musicbrainz>? get musicbrainz;
+  @override
+  Deezer? get deezer;
+  @override
+  Deezer? get spotify;
+  @override
+  Musicstory? get musicstory;
+  @override
+  Youtube? get youtube;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ExternalMetadataCopyWith<_$_ExternalMetadata> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Deezer _$DeezerFromJson(Map<String, dynamic> json) {
+  return _Deezer.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Deezer {
+  TrackClass? get track => throw _privateConstructorUsedError;
+  List<TrackClass>? get artists => throw _privateConstructorUsedError;
+  TrackClass? get album => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DeezerCopyWith<Deezer> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeezerCopyWith<$Res> {
+  factory $DeezerCopyWith(Deezer value, $Res Function(Deezer) then) =
+      _$DeezerCopyWithImpl<$Res, Deezer>;
+  @useResult
+  $Res call({TrackClass? track, List<TrackClass>? artists, TrackClass? album});
+
+  $TrackClassCopyWith<$Res>? get track;
+  $TrackClassCopyWith<$Res>? get album;
+}
+
+/// @nodoc
+class _$DeezerCopyWithImpl<$Res, $Val extends Deezer>
+    implements $DeezerCopyWith<$Res> {
+  _$DeezerCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? track = freezed,
+    Object? artists = freezed,
+    Object? album = freezed,
+  }) {
+    return _then(_value.copyWith(
+      track: freezed == track
+          ? _value.track
+          : track // ignore: cast_nullable_to_non_nullable
+              as TrackClass?,
+      artists: freezed == artists
+          ? _value.artists
+          : artists // ignore: cast_nullable_to_non_nullable
+              as List<TrackClass>?,
+      album: freezed == album
+          ? _value.album
+          : album // ignore: cast_nullable_to_non_nullable
+              as TrackClass?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TrackClassCopyWith<$Res>? get track {
+    if (_value.track == null) {
+      return null;
+    }
+
+    return $TrackClassCopyWith<$Res>(_value.track!, (value) {
+      return _then(_value.copyWith(track: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TrackClassCopyWith<$Res>? get album {
+    if (_value.album == null) {
+      return null;
+    }
+
+    return $TrackClassCopyWith<$Res>(_value.album!, (value) {
+      return _then(_value.copyWith(album: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_DeezerCopyWith<$Res> implements $DeezerCopyWith<$Res> {
+  factory _$$_DeezerCopyWith(_$_Deezer value, $Res Function(_$_Deezer) then) =
+      __$$_DeezerCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({TrackClass? track, List<TrackClass>? artists, TrackClass? album});
+
+  @override
+  $TrackClassCopyWith<$Res>? get track;
+  @override
+  $TrackClassCopyWith<$Res>? get album;
+}
+
+/// @nodoc
+class __$$_DeezerCopyWithImpl<$Res>
+    extends _$DeezerCopyWithImpl<$Res, _$_Deezer>
+    implements _$$_DeezerCopyWith<$Res> {
+  __$$_DeezerCopyWithImpl(_$_Deezer _value, $Res Function(_$_Deezer) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? track = freezed,
+    Object? artists = freezed,
+    Object? album = freezed,
+  }) {
+    return _then(_$_Deezer(
+      track: freezed == track
+          ? _value.track
+          : track // ignore: cast_nullable_to_non_nullable
+              as TrackClass?,
+      artists: freezed == artists
+          ? _value._artists
+          : artists // ignore: cast_nullable_to_non_nullable
+              as List<TrackClass>?,
+      album: freezed == album
+          ? _value.album
+          : album // ignore: cast_nullable_to_non_nullable
+              as TrackClass?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Deezer implements _Deezer {
+  const _$_Deezer({this.track, final List<TrackClass>? artists, this.album})
+      : _artists = artists;
+
+  factory _$_Deezer.fromJson(Map<String, dynamic> json) =>
+      _$$_DeezerFromJson(json);
+
+  @override
+  final TrackClass? track;
+  final List<TrackClass>? _artists;
+  @override
+  List<TrackClass>? get artists {
+    final value = _artists;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final TrackClass? album;
+
+  @override
+  String toString() {
+    return 'Deezer(track: $track, artists: $artists, album: $album)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Deezer &&
+            (identical(other.track, track) || other.track == track) &&
+            const DeepCollectionEquality().equals(other._artists, _artists) &&
+            (identical(other.album, album) || other.album == album));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, track, const DeepCollectionEquality().hash(_artists), album);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DeezerCopyWith<_$_Deezer> get copyWith =>
+      __$$_DeezerCopyWithImpl<_$_Deezer>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DeezerToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Deezer implements Deezer {
+  const factory _Deezer(
+      {final TrackClass? track,
+      final List<TrackClass>? artists,
+      final TrackClass? album}) = _$_Deezer;
+
+  factory _Deezer.fromJson(Map<String, dynamic> json) = _$_Deezer.fromJson;
+
+  @override
+  TrackClass? get track;
+  @override
+  List<TrackClass>? get artists;
+  @override
+  TrackClass? get album;
+  @override
+  @JsonKey(ignore: true)
+  _$$_DeezerCopyWith<_$_Deezer> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 TrackClass _$TrackClassFromJson(Map<String, dynamic> json) {
   return _TrackClass.fromJson(json);
 }
