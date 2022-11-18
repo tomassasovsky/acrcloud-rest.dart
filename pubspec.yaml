@@ -1,6 +1,6 @@
 name: acrcloud_rest
 description: A Dart http client for the ACRCloud service.
-version: 0.1.0+1
+version: 0.1.0+2
 repository: https://github.com/tomassasovsky/acrcloud-rest.dart.git
 
 environment:
