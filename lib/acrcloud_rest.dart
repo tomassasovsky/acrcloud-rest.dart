@@ -9,3 +9,4 @@
 library acrcloud_rest;
 
 export 'src/acrcloud_rest.dart';
+export 'src/models/models.dart';

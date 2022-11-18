@@ -8,16 +8,16 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:acrcloud_rest/src/models/models.dart';
+import 'package:acrcloud_rest/acrcloud_rest.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
 
 /// {@template acrcloud_rest}
 /// A Dart http client for the ACRCloud service.
 /// {@endtemplate}
-class AcrcloudRest {
+class ACRCloudRest {
   /// {@macro acrcloud_rest}
-  AcrcloudRest({
+  ACRCloudRest({
     http.Client? client,
   }) : _client = client ?? http.Client();
 
@@ -65,6 +65,77 @@ class AcrcloudRest {
       jsonDecode(response.body) as Map,
     );
 
+    return result;
+  }
+
+  /// Get music platforms metadata and links.
+  ///
+  /// The [platforms] parameter is a list of [SongPlatforms] values,
+  /// which can be used to specify which platforms to get metadata from.
+  Future<List<SongMetadata>> getMetadata({
+    /// The platorfm's url, for example:
+    /// https://www.youtube.com/watch?v=5UMCrq-bBCg
+    /// https://open.spotify.com/track/1p80LdxRV74UKvL8gnD7ky
+    /// https://www.deezer.com/track/1290892992
+    String? sourceUrl,
+
+    /// ISRC
+    String? isrc,
+
+    /// ACRCloud Music ID
+    String? acrId,
+
+    /// The platform's metadata you want to get.
+    /// for example:
+    /// ```dart
+    /// [SongPlatforms.spotify, SongPlatforms.youtube]
+    /// ```
+    ///
+    /// The default value is equivalent to:
+    /// ```dart
+    /// [
+    ///   SongPlatforms.spotify,
+    ///   SongPlatforms.deezer,
+    ///   SongPlatforms.youtube,
+    ///   SongPlatforms.itunes,
+    ///   SongPlatforms.tidal,
+    /// ];
+
+    List<SongPlatforms> platforms = SongPlatforms.defaultList,
+
+    /// Your search query, example: Eminem -Without Me
+
+    String? query,
+
+    /// If true, the response metadata will contain the contributors
+    /// and works metadata if the tracks have.
+
+    bool includeWorks = false,
+    required String token,
+  }) async {
+    final fields = {
+      'include_works': includeWorks ? '1' : '0',
+      if (sourceUrl != null) 'source_url': sourceUrl,
+      if (isrc != null) 'isrc': isrc,
+      if (acrId != null) 'acr_id': acrId,
+      if (query != null) 'query': query,
+      if (platforms.isNotEmpty) 'platforms': platforms.join(','),
+    };
+
+    final uri =
+        Uri.parse('https://eu-api-v2.acrcloud.com/api/external-metadata/tracks')
+            .replace(queryParameters: fields);
+
+    final response = await _client.get(
+      uri,
+      headers: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token',
+      },
+    );
+
+    final result = songMetadataResponseFromJson(response.body);
     return result;
   }
 

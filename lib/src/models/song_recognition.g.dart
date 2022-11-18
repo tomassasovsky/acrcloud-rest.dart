@@ -15,7 +15,7 @@ _$_SongRecognitionResponse _$$_SongRecognitionResponseFromJson(
       status: json['status'] == null
           ? null
           : Status.fromJson(json['status'] as Map<String, dynamic>),
-      resultType: json['resultType'] as int?,
+      resultType: json['result_type'] as int?,
     );
 
 Map<String, dynamic> _$$_SongRecognitionResponseToJson(
@@ -23,13 +23,13 @@ Map<String, dynamic> _$$_SongRecognitionResponseToJson(
     <String, dynamic>{
       'metadata': instance.metadata,
       'status': instance.status,
-      'resultType': instance.resultType,
+      'result_type': instance.resultType,
     };
 
 _$_Metadata _$$_MetadataFromJson(Map<String, dynamic> json) => _$_Metadata(
-      timestampUtc: json['timestampUtc'] == null
+      timestampUtc: json['timestamp_utc'] == null
           ? null
-          : DateTime.parse(json['timestampUtc'] as String),
+          : DateTime.parse(json['timestamp_utc'] as String),
       music: (json['music'] as List<dynamic>?)
           ?.map((e) => Music.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -37,16 +37,16 @@ _$_Metadata _$$_MetadataFromJson(Map<String, dynamic> json) => _$_Metadata(
 
 Map<String, dynamic> _$$_MetadataToJson(_$_Metadata instance) =>
     <String, dynamic>{
-      'timestampUtc': instance.timestampUtc?.toIso8601String(),
+      'timestamp_utc': instance.timestampUtc?.toIso8601String(),
       'music': instance.music,
     };
 
 _$_Music _$$_MusicFromJson(Map<String, dynamic> json) => _$_Music(
-      dbBeginTimeOffsetMs: json['dbBeginTimeOffsetMs'] as int?,
-      dbEndTimeOffsetMs: json['dbEndTimeOffsetMs'] as int?,
-      sampleBeginTimeOffsetMs: json['sampleBeginTimeOffsetMs'] as int?,
-      sampleEndTimeOffsetMs: json['sampleEndTimeOffsetMs'] as int?,
-      playOffsetMs: json['playOffsetMs'] as int?,
+      dbBeginTimeOffsetMs: json['db_begin_time_offset_ms'] as int?,
+      dbEndTimeOffsetMs: json['db_end_time_offset_ms'] as int?,
+      sampleBeginTimeOffsetMs: json['sample_begin_time_offset_ms'] as int?,
+      sampleEndTimeOffsetMs: json['sample_end_time_offset_ms'] as int?,
+      playOffsetMs: json['play_offset_ms'] as int?,
       artists: (json['artists'] as List<dynamic>?)
           ?.map((e) => MusicAlbum.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -57,13 +57,13 @@ _$_Music _$$_MusicFromJson(Map<String, dynamic> json) => _$_Music(
       album: json['album'] == null
           ? null
           : MusicAlbum.fromJson(json['album'] as Map<String, dynamic>),
-      rightsClaim: (json['rightsClaim'] as List<dynamic>?)
+      rightsClaim: (json['rights_claim'] as List<dynamic>?)
           ?.map((e) => RightsClaim.fromJson(e as Map<String, dynamic>))
           .toList(),
-      externalIds: json['externalIds'] == null
+      externalIds: json['external_ids'] == null
           ? null
-          : ExternalIds.fromJson(json['externalIds'] as Map<String, dynamic>),
-      resultFrom: json['resultFrom'] as int?,
+          : ExternalIds.fromJson(json['external_ids'] as Map<String, dynamic>),
+      resultFrom: json['result_from'] as int?,
       contributors: json['contributors'] == null
           ? null
           : Contributors.fromJson(json['contributors'] as Map<String, dynamic>),
@@ -72,48 +72,48 @@ _$_Music _$$_MusicFromJson(Map<String, dynamic> json) => _$_Music(
           ?.map((e) => Lang.fromJson(e as Map<String, dynamic>))
           .toList(),
       language: json['language'] as String?,
-      durationMs: json['durationMs'] as int?,
+      durationMs: json['duration_ms'] as int?,
       label: json['label'] as String?,
-      externalMetadata: json['externalMetadata'] == null
+      externalMetadata: json['external_metadata'] == null
           ? null
           : ExternalMetadata.fromJson(
-              json['externalMetadata'] as Map<String, dynamic>),
+              json['external_metadata'] as Map<String, dynamic>),
       score: json['score'] as int?,
       genres: (json['genres'] as List<dynamic>?)
           ?.map((e) => Genre.fromJson(e as Map<String, dynamic>))
           .toList(),
-      releaseDate: json['releaseDate'] == null
+      releaseDate: json['release_date'] == null
           ? null
-          : DateTime.parse(json['releaseDate'] as String),
-      releaseByTerritories: (json['releaseByTerritories'] as List<dynamic>?)
+          : DateTime.parse(json['release_date'] as String),
+      releaseByTerritories: (json['release_by_territories'] as List<dynamic>?)
           ?.map((e) => ReleaseByTerritory.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$$_MusicToJson(_$_Music instance) => <String, dynamic>{
-      'dbBeginTimeOffsetMs': instance.dbBeginTimeOffsetMs,
-      'dbEndTimeOffsetMs': instance.dbEndTimeOffsetMs,
-      'sampleBeginTimeOffsetMs': instance.sampleBeginTimeOffsetMs,
-      'sampleEndTimeOffsetMs': instance.sampleEndTimeOffsetMs,
-      'playOffsetMs': instance.playOffsetMs,
+      'db_begin_time_offset_ms': instance.dbBeginTimeOffsetMs,
+      'db_end_time_offset_ms': instance.dbEndTimeOffsetMs,
+      'sample_begin_time_offset_ms': instance.sampleBeginTimeOffsetMs,
+      'sample_end_time_offset_ms': instance.sampleEndTimeOffsetMs,
+      'play_offset_ms': instance.playOffsetMs,
       'artists': instance.artists,
       'lyrics': instance.lyrics,
       'acrid': instance.acrid,
       'album': instance.album,
-      'rightsClaim': instance.rightsClaim,
-      'externalIds': instance.externalIds,
-      'resultFrom': instance.resultFrom,
+      'rights_claim': instance.rightsClaim,
+      'external_ids': instance.externalIds,
+      'result_from': instance.resultFrom,
       'contributors': instance.contributors,
       'title': instance.title,
       'langs': instance.langs,
       'language': instance.language,
-      'durationMs': instance.durationMs,
+      'duration_ms': instance.durationMs,
       'label': instance.label,
-      'externalMetadata': instance.externalMetadata,
+      'external_metadata': instance.externalMetadata,
       'score': instance.score,
       'genres': instance.genres,
-      'releaseDate': instance.releaseDate?.toIso8601String(),
-      'releaseByTerritories': instance.releaseByTerritories,
+      'release_date': instance.releaseDate?.toIso8601String(),
+      'release_by_territories': instance.releaseByTerritories,
     };
 
 _$_MusicAlbum _$$_MusicAlbumFromJson(Map<String, dynamic> json) =>
@@ -168,52 +168,6 @@ Map<String, dynamic> _$$_ExternalIdsToJson(_$_ExternalIds instance) =>
       'iswc': instance.iswc,
       'isrc': instance.isrc,
       'upc': instance.upc,
-    };
-
-_$_ExternalMetadata _$$_ExternalMetadataFromJson(Map<String, dynamic> json) =>
-    _$_ExternalMetadata(
-      musicbrainz: (json['musicbrainz'] as List<dynamic>?)
-          ?.map((e) => Musicbrainz.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      deezer: json['deezer'] == null
-          ? null
-          : Deezer.fromJson(json['deezer'] as Map<String, dynamic>),
-      spotify: json['spotify'] == null
-          ? null
-          : Deezer.fromJson(json['spotify'] as Map<String, dynamic>),
-      musicstory: json['musicstory'] == null
-          ? null
-          : Musicstory.fromJson(json['musicstory'] as Map<String, dynamic>),
-      youtube: json['youtube'] == null
-          ? null
-          : Youtube.fromJson(json['youtube'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_ExternalMetadataToJson(_$_ExternalMetadata instance) =>
-    <String, dynamic>{
-      'musicbrainz': instance.musicbrainz,
-      'deezer': instance.deezer,
-      'spotify': instance.spotify,
-      'musicstory': instance.musicstory,
-      'youtube': instance.youtube,
-    };
-
-_$_Deezer _$$_DeezerFromJson(Map<String, dynamic> json) => _$_Deezer(
-      track: json['track'] == null
-          ? null
-          : TrackClass.fromJson(json['track'] as Map<String, dynamic>),
-      artists: (json['artists'] as List<dynamic>?)
-          ?.map((e) => TrackClass.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      album: json['album'] == null
-          ? null
-          : TrackClass.fromJson(json['album'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_DeezerToJson(_$_Deezer instance) => <String, dynamic>{
-      'track': instance.track,
-      'artists': instance.artists,
-      'album': instance.album,
     };
 
 _$_TrackClass _$$_TrackClassFromJson(Map<String, dynamic> json) =>
@@ -287,16 +241,16 @@ _$_ReleaseByTerritory _$$_ReleaseByTerritoryFromJson(
       territories: (json['territories'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      releaseDate: json['releaseDate'] == null
+      releaseDate: json['release_date'] == null
           ? null
-          : DateTime.parse(json['releaseDate'] as String),
+          : DateTime.parse(json['release_date'] as String),
     );
 
 Map<String, dynamic> _$$_ReleaseByTerritoryToJson(
         _$_ReleaseByTerritory instance) =>
     <String, dynamic>{
       'territories': instance.territories,
-      'releaseDate': instance.releaseDate?.toIso8601String(),
+      'release_date': instance.releaseDate?.toIso8601String(),
     };
 
 _$_RightsClaim _$$_RightsClaimFromJson(Map<String, dynamic> json) =>
@@ -304,10 +258,10 @@ _$_RightsClaim _$$_RightsClaimFromJson(Map<String, dynamic> json) =>
       distributor: json['distributor'] == null
           ? null
           : Distributor.fromJson(json['distributor'] as Map<String, dynamic>),
-      rightsOwners: (json['rightsOwners'] as List<dynamic>?)
+      rightsOwners: (json['rights_owners'] as List<dynamic>?)
           ?.map((e) => RightsOwner.fromJson(e as Map<String, dynamic>))
           .toList(),
-      rightsClaimPolicy: json['rightsClaimPolicy'] as String?,
+      rightsClaimPolicy: json['rights_claim_policy'] as String?,
       territories: (json['territories'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -316,8 +270,8 @@ _$_RightsClaim _$$_RightsClaimFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_RightsClaimToJson(_$_RightsClaim instance) =>
     <String, dynamic>{
       'distributor': instance.distributor,
-      'rightsOwners': instance.rightsOwners,
-      'rightsClaimPolicy': instance.rightsClaimPolicy,
+      'rights_owners': instance.rightsOwners,
+      'rights_claim_policy': instance.rightsClaimPolicy,
       'territories': instance.territories,
     };
 
@@ -336,13 +290,13 @@ Map<String, dynamic> _$$_DistributorToJson(_$_Distributor instance) =>
 _$_RightsOwner _$$_RightsOwnerFromJson(Map<String, dynamic> json) =>
     _$_RightsOwner(
       name: json['name'] as String?,
-      sharePercentage: json['sharePercentage'] as int?,
+      sharePercentage: json['share_percentage'] as int?,
     );
 
 Map<String, dynamic> _$$_RightsOwnerToJson(_$_RightsOwner instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'sharePercentage': instance.sharePercentage,
+      'share_percentage': instance.sharePercentage,
     };
 
 _$_Status _$$_StatusFromJson(Map<String, dynamic> json) => _$_Status(

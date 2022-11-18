@@ -28,16 +28,16 @@ class SongRecognitionOptions {
   /// The endpoint of the ACRCloud service.
   final String endpoint;
 
-  /// The access key of the ACRCloud service.
+  /// The signature version ("1") of the ACRCloud service.
   final String signatureVersion;
 
-  /// The access secret of the ACRCloud service.
+  /// audio or fingerprint.
   final String dataType;
 
   /// The access key of the ACRCloud service.
   final bool secure;
 
-  /// The access key of the ACRCloud service.
+  /// The project access_key.
   final String accessKey;
 
   /// The access secret of the ACRCloud service.

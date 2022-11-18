@@ -8,6 +8,7 @@
 // ignore_for_file: public_member_api_docs
 
 import 'dart:convert';
+import 'package:acrcloud_rest/acrcloud_rest.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'song_recognition.freezed.dart';
@@ -115,31 +116,6 @@ class ExternalIds with _$ExternalIds {
 
   factory ExternalIds.fromJson(Map<String, dynamic> json) =>
       _$ExternalIdsFromJson(json);
-}
-
-@freezed
-class ExternalMetadata with _$ExternalMetadata {
-  const factory ExternalMetadata({
-    List<Musicbrainz>? musicbrainz,
-    Deezer? deezer,
-    Deezer? spotify,
-    Musicstory? musicstory,
-    Youtube? youtube,
-  }) = _ExternalMetadata;
-
-  factory ExternalMetadata.fromJson(Map<String, dynamic> json) =>
-      _$ExternalMetadataFromJson(json);
-}
-
-@freezed
-class Deezer with _$Deezer {
-  const factory Deezer({
-    TrackClass? track,
-    List<TrackClass>? artists,
-    TrackClass? album,
-  }) = _Deezer;
-
-  factory Deezer.fromJson(Map<String, dynamic> json) => _$DeezerFromJson(json);
 }
 
 @freezed

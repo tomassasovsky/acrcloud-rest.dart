@@ -4,6 +4,10 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+// Song Metadata models:
+export 'platforms.dart';
+export 'song_metadata.dart';
+
 // Song Recognition models:
 export 'song_recognition.dart';
 export 'song_recognition_options.dart';
