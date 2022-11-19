@@ -4,6 +4,8 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+export 'exceptions.dart';
+
 // Song Metadata models:
 export 'platforms.dart';
 export 'song_metadata.dart';

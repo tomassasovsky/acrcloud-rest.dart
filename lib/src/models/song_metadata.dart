@@ -12,7 +12,12 @@ part 'song_metadata.g.dart';
 
 List<SongMetadata> songMetadataResponseFromJson(String str) {
   final decoded = json.decode(str) as Map;
-  final data = decoded['data'] as List;
+  final data = decoded['data'] as List?;
+
+  if (data == null) {
+    throw const SongMetadataCameNull();
+  }
+
   return List<SongMetadata>.from(
     data
         .cast<Map<dynamic, dynamic>>()

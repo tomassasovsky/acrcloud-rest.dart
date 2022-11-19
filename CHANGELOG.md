@@ -1,4 +1,8 @@
-# 0.1.0+5
+# 0.1.0+6
+
+- fix: now throwing exception `SongMetadataCameNull` when the song metadata comes null.
+
+- # 0.1.0+5
 
 - feat: labels for SongPlatforms
 
