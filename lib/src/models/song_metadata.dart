@@ -4,6 +4,7 @@
 // ignore_for_file: public_member_api_docs, invalid_annotation_target
 
 import 'dart:convert';
+import 'dart:developer';
 import 'package:acrcloud_rest/acrcloud_rest.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,6 +12,7 @@ part 'song_metadata.freezed.dart';
 part 'song_metadata.g.dart';
 
 List<SongMetadata> songMetadataResponseFromJson(String str) {
+  log('songMetadataResponseFromJson: $str');
   final decoded = json.decode(str) as Map;
   final data = decoded['data'] as List;
   return List<SongMetadata>.from(
